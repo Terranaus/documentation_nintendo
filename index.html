@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation Personnelle Nintendo</title>
+    <title>Documentation Nintendo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -291,26 +291,6 @@
             background-color: var(--footer-bg);
             border-radius: 8px;
         }
-        
-        /* Indicateur de thème */
-        .theme-indicator {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 10px var(--card-shadow);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .theme-indicator .icon {
-            color: var(--secondary);
-        }
 
         /* Responsive */
         @media (max-width: 900px) {
@@ -349,18 +329,27 @@
             .main-content {
                 margin-left: 0;
             }
-            
-            .theme-indicator {
-                bottom: 10px;
-                right: 10px;
-                font-size: 0.8rem;
-            }
         }
     </style>
 </head>
 
 <body>
     <!-- Barre latérale -->
+    
+    <!--
+    Consoles à ajouter :
+    - Color TV-Game
+    - Famicom (NES)
+    - Super Famicom (SNES)
+    - Nintendo 64
+    - GameCube
+    - iQue Player
+    - Wii
+    - Wii U
+    - Nintendo Classic Mini (NES)
+    - Nintendo Classic Mini: Super Nintendo Entertainment System (SNES)
+    - Virtual Boy
+    -->
     <div class="sidebar">
         <div class="logo">
             <h1><i class="fas fa-gamepad"></i> Consoles</h1>
@@ -370,46 +359,96 @@
         </div>
         
         <div class="sidebar-section">
-            <h2>Nintendo 3DS</h2>
+            <h2>Switch 2</h2>
             <ul>
-                <li><a href="#" class="active">Informations</a></li>
-                <li><a href="#">Composants</a></li>
+                <li><a href="nintendo/switch_2/switch_2_informations.html">Informations</a></li>
+                <li><a href="nintendo/switch_2/switch_2_composants.html">Composants</a></li>
             </ul>
         </div>
         
         <div class="sidebar-section">
-            <h2>Nintendo Switch</h2>
+            <h2>Switch</h2>
             <ul>
-                <li><a href="#">Informations</a></li>
-                <li><a href="#">Composants</a></li>
+                <li><a href="nintendo/switch/switch_informations.html">Informations</a></li>
+                <li><a href="nintendo/switch/switch_composants.html">Composants</a></li>
             </ul>
         </div>
         
+
         <div class="sidebar-section">
-            <h2>Nintendo Switch 2</h2>
+            <h2>3DS</h2>
             <ul>
-                <li><a href="#">Informations</a></li>
-                <li><a href="#">Composants</a></li>
+                <li><a href="nintendo/3ds/3ds_informations.html">Informations</a></li>
+                <li><a href="nintendo/3ds/3ds_composants.html">Composants</a></li>
             </ul>
         </div>
-        
+
+        <div class="sidebar-section">
+            <h2>DS</h2>
+            <ul>
+                <li><a href="nintendo/3ds/3ds_informations.html">Informations</a></li>
+                <li><a href="nintendo/3ds/3ds_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy Advance</h2>
+            <ul>
+                <li><a href="nintendo/gameboy_advance/gameboy_advance_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy_advance/gameboy_advance_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy Color</h2>
+            <ul>
+                <li><a href="nintendo/gameboy_color/gameboy_color_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy_color/gameboy_color_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy</h2>
+            <ul>
+                <li><a href="nintendo/gameboy/gameboy_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy/gameboy_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Super NES</h2>
+            <ul>
+                <li><a href="nintendo/super_nes/super_nes_informations.html">Informations</a></li>
+                <li><a href="nintendo/super_nes/super_nes_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>NES</h2>
+            <ul>
+                <li><a href="nintendo/nes/nes_informations.html">Informations</a></li>
+                <li><a href="nintendo/nes/nes_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
         <div class="sidebar-section">
             <h2>Sections de documentation</h2>
             <ul>
-                <li><a href="#" class="active">Accueil</a></li>
-                <li><a href="#">Nouveautés</a></li>
-                <li><a href="#">Tutoriel</a></li>
-                <li><a href="#">Référence de la bibliothèque</a></li>
-                <li><a href="#">Référence du langage</a></li>
-                <li><a href="#">Installation et utilisation</a></li>
-                <li><a href="#">Installation des modules</a></li>
-                <li><a href="#">Distribution des modules</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Dépréciations</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="nouveautes.html">Nouveautés</a></li>
             </ul>
         </div>
     </div>
-    
+
+
+
+
+
+
+
+
+
+
     <!-- Contenu principal -->
     <div class="main-content">
         <div class="header">
@@ -421,31 +460,18 @@
         </div>
         
         <div class="welcome-box">
-            <h2>Bienvenue dans la documentation Nintendo !</h2>
+            <h2>Bienvenue dans une documentation française sur Nintendo !</h2>
             <p>Cette documentation non-officielle couvre les différentes consoles Nintendo, leurs spécifications techniques, et leurs caractéristiques uniques.</p>
             <p>Utilisez le bouton <i class="fas fa-moon"></i> en haut à droite pour basculer entre les thèmes clair et sombre.</p>
         </div>
-        
+                
         <div class="content-section">
-            <h2>Nouveautés dans la version 1.0</h2>
-            <p>Découvrez les principales nouveautés de cette version de votre documentation personnelle.</p>
-            
-            <ul>
-                <li><strong>Thème sombre</strong> - Basculer facilement entre les modes clair et sombre</li>
-                <li><strong>Nouvelle organisation</strong> - Structure hiérarchique améliorée</li>
-                <li><strong>Recherche intégrée</strong> - Trouvez rapidement vos notes</li>
-                <li><strong>Navigation responsive</strong> - Accès depuis tous les appareils</li>
-                <li><strong>Gestion des versions</strong> - Suivez l'évolution de vos connaissances</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Consoles Nintendo</h2>
+            <h2>Dernières consoles</h2>
             
             <div class="module-grid">
                 <div class="module-card">
                     <h3><i class="fas fa-cube"></i> Nintendo 3DS</h3>
-                    <p>Console portable avec écran 3D sans lunettes. Lancée en 2011.</p>
+                    <p>Console portable avec écran 3D. Lancée en 2011.</p>
                     <div class="code-block">
                         Spécifications :<br>
                         - Processeur : Dual-Core ARM11<br>
@@ -456,7 +482,7 @@
                 
                 <div class="module-card">
                     <h3><i class="fas fa-gamepad"></i> Nintendo Switch</h3>
-                    <p>Console hybride lancée en 2017. Fonctionne comme console de salon et portable.</p>
+                    <p>Console hybride. Lancée en 2017.</p>
                     <div class="code-block">
                         Spécifications :<br>
                         - Processeur : NVIDIA Tegra<br>
@@ -467,9 +493,9 @@
                 
                 <div class="module-card">
                     <h3><i class="fas fa-bolt"></i> Nintendo Switch 2</h3>
-                    <p>Successeur de la Switch annoncé pour 2025. Performances améliorées.</p>
+                    <p>Successeur de la Switch. Lancée en 2025.</p>
                     <div class="code-block">
-                        Spécifications (attendues) :<br>
+                        Spécifications :<br>
                         - Processeur : NVIDIA Tegra T239<br>
                         - RAM : 8GB ou 12GB<br>
                         - Stockage : 128GB ou 256GB
@@ -480,13 +506,13 @@
         
         <div class="content-section">
             <h2>Comment utiliser cette documentation</h2>
-            <p>Cette documentation est organisée pour vous aider à trouver rapidement les informations dont vous avez besoin sur les consoles Nintendo.</p>
+            <p>Cette documentation répertorie des informations pouvant être utiles sur les consoles Nintendo.</p>
             
             <h3>Navigation</h3>
             <p>Utilisez la barre latérale à gauche pour naviguer entre les différentes sections et consoles. Les liens en surbrillance indiquent la page actuelle.</p>
             
             <h3>Recherche</h3>
-            <p>La barre de recherche en haut à droite vous permet de trouver rapidement des termes spécifiques dans toute la documentation.</p>
+            <p>La barre de recherche en haut à droite vous permet de trouver rapidement des termes spécifiques dans toute la documentation (ne marche pas pour le moment).</p>
             
             <h3>Thème sombre</h3>
             <p>Cliquez sur l'icône de lune en haut à droite pour activer le thème sombre, idéal pour une consultation nocturne.</p>
@@ -495,14 +521,14 @@
         <div class="footer">
             <p>© 2025 Documentation Nintendo. Tous droits réservés.</p>
             <p>Dernière mise à jour : 9 juin 2025</p>
-            <p>Voir mon github : <a href="https://github.com/Terranaus">https://github.com/Terranaus</a></p>
+            <p>Documentation v1.0.0</p>
+            <p>Mon github : <a href="https://github.com/Terranaus">https://github.com/Terranaus</a></p>
         </div>
     </div>
     
     <!-- Indicateur de thème -->
     <div class="theme-indicator">
-        <i class="fas fa-circle icon"></i>
-        <span id="themeStatus">Thème clair</span>
+        <span id="themeStatus"></span>
     </div>
 
     <script>
@@ -524,7 +550,7 @@
         function enableDarkTheme() {
             body.classList.add('dark-theme');
             themeIcon.className = 'fas fa-sun';
-            themeStatus.textContent = 'Thème sombre';
+            themeStatus.textContent = '';
             localStorage.setItem('theme', 'dark-theme');
         }
         
@@ -532,7 +558,7 @@
         function enableLightTheme() {
             body.classList.remove('dark-theme');
             themeIcon.className = 'fas fa-moon';
-            themeStatus.textContent = 'Thème clair';
+            themeStatus.textContent = '';
             localStorage.setItem('theme', 'light-theme');
         }
         

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Personnelle Nintendo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Variables pour le thème clair */
+            --primary: #306998;
+            --secondary: #FFD43B;
+            --bg: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --text: #333333;
+            --text-secondary: #666666;
+            --border: #dee2e6;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.05);
+            --code-bg: #f1f3f5;
+            --welcome-bg: #e7f4ff;
+            --footer-bg: #f8f9fa;
+            --toggle-bg: #e9ecef;
+            --toggle-icon: #333333;
+        }
+
+        .dark-theme {
+            /* Variables pour le thème sombre */
+            --primary: #4da6ff;
+            --secondary: #ffcc00;
+            --bg: #1a1d21;
+            --sidebar-bg: #212529;
+            --text: #e9ecef;
+            --text-secondary: #adb5bd;
+            --border: #495057;
+            --card-bg: #2d3339;
+            --card-shadow: rgba(0, 0, 0, 0.2);
+            --code-bg: #343a40;
+            --welcome-bg: #1c3d5a;
+            --footer-bg: #212529;
+            --toggle-bg: #495057;
+            --toggle-icon: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Barre latérale */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        .logo {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 i {
+            color: var(--secondary);
+        }
+
+        .theme-toggle {
+            background: var(--toggle-bg);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--toggle-icon);
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+            padding: 0 20px;
+        }
+
+        .sidebar-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section li {
+            margin: 6px 0;
+        }
+
+        .sidebar-section a {
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .sidebar-section a:hover {
+            background-color: rgba(77, 166, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .sidebar-section a.active {
+            background-color: rgba(77, 166, 255, 0.15);
+            color: var(--primary);
+            font-weight: 500;
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Contenu principal */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            min-height: 100vh;
+            padding: 30px 40px;
+            max-width: 900px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .search-box {
+            display: flex;
+            width: 300px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+            background-color: var(--card-bg);
+            color: var(--text);
+        }
+
+        .search-box button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Contenu */
+        .welcome-box {
+            background-color: var(--welcome-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .welcome-box h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.8rem;
+        }
+
+        .content-section h3 {
+            color: var(--text);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .content-section h4 {
+            color: var(--text-secondary);
+            margin: 20px 0 12px;
+            font-size: 1.2rem;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .module-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 4px var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .module-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .code-block {
+            background-color: var(--code-bg);
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        /* Pied de page */
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: var(--footer-bg);
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .sidebar {
+                width: 250px;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+            
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                max-height: 60vh;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1><i class="fas fa-gamepad"></i> Consoles</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-section">
+            <h2>Switch 2</h2>
+            <ul>
+                <li><a href="nintendo/switch_2/switch_2_informations.html">Informations</a></li>
+                <li><a href="nintendo/switch_2/switch_2_composants.html">Composants</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-section">
+            <h2>Switch</h2>
+            <ul>
+                <li><a href="nintendo/switch/switch_informations.html">Informations</a></li>
+                <li><a href="nintendo/switch/switch_composants.html">Composants</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="sidebar-section">
+            <h2>3DS</h2>
+            <ul>
+                <li><a href="nintendo/3ds/3ds_informations.html">Informations</a></li>
+                <li><a href="nintendo/3ds/3ds_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>DS</h2>
+            <ul>
+                <li><a href="nintendo/3ds/3ds_informations.html">Informations</a></li>
+                <li><a href="nintendo/3ds/3ds_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy Advance</h2>
+            <ul>
+                <li><a href="nintendo/gameboy_advance/gameboy_advance_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy_advance/gameboy_advance_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy Color</h2>
+            <ul>
+                <li><a href="nintendo/gameboy_color/gameboy_color_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy_color/gameboy_color_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Gameboy</h2>
+            <ul>
+                <li><a href="nintendo/gameboy/gameboy_informations.html">Informations</a></li>
+                <li><a href="nintendo/gameboy/gameboy_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Super N.E.S</h2>
+            <ul>
+                <li><a href="nintendo/super_nes/super_nes_informations.html">Informations</a></li>
+                <li><a href="nintendo/super_nes/super_nes_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>N.E.S</h2>
+            <ul>
+                <li><a href="nintendo/nes/nes_informations.html">Informations</a></li>
+                <li><a href="nintendo/nes/nes_composants.html">Composants</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Sections de documentation</h2>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="nouveautes.html">Nouveautés</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Nouveautés</h1>
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher dans la documentation">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Nouveautés dans la version 1.0</h2>
+            <p>Découvrez les principales nouveautés de cette version de votre documentation personnelle.</p>
+            
+            <ul>
+                <li><strong>Thème sombre</strong> - Basculer facilement entre les modes clair et sombre</li>
+                <li><strong>Nouvelle organisation</strong> - Structure hiérarchique améliorée</li>
+                <li><strong>Recherche intégrée</strong> - Trouvez rapidement vos notes</li>
+                <li><strong>Navigation responsive</strong> - Accès depuis tous les appareils</li>
+                <li><strong>Gestion des versions</strong> - Suivez l'évolution de vos connaissances</li>
+            </ul>
+        </div>
+                
+        <div class="footer">
+            <p>© 2025 Documentation Nintendo. Tous droits réservés.</p>
+            <p>Dernière mise à jour : 9 juin 2025</p>
+            <p>Documentation v1.0.0</p>
+            <p>Mon github : <a href="https://github.com/Terranaus">https://github.com/Terranaus</a></p>
+        </div>
+    </div>
+    
+    <!-- Indicateur de thème -->
+    <div class="theme-indicator">
+        <span id="themeStatus"></span>
+    </div>
+
+    <script>
+        // Sélection des éléments
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        const themeStatus = document.getElementById('themeStatus');
+        
+        // Vérifier le thème stocké dans localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark-theme') {
+            enableDarkTheme();
+        } else {
+            enableLightTheme();
+        }
+        
+        // Fonction pour activer le thème sombre
+        function enableDarkTheme() {
+            body.classList.add('dark-theme');
+            themeIcon.className = 'fas fa-sun';
+            themeStatus.textContent = '';
+            localStorage.setItem('theme', 'dark-theme');
+        }
+        
+        // Fonction pour activer le thème clair
+        function enableLightTheme() {
+            body.classList.remove('dark-theme');
+            themeIcon.className = 'fas fa-moon';
+            themeStatus.textContent = '';
+            localStorage.setItem('theme', 'light-theme');
+        }
+        
+        // Gestionnaire d'événement pour le bouton de bascule
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                enableLightTheme();
+            } else {
+                enableDarkTheme();
+            }
+        });
+    </script>
+</body>
+</html>
